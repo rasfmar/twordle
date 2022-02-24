@@ -1,0 +1,12 @@
+// Abstracts (variables/constants)
+@use "abstracts/theme" as theme;
+@use "abstracts/keyframes" as animations;
+
+// Core (styles that apply everywhere)
+@use "core/main";
+
+// Layout (general layout of page)
+@use "layout/siteNav";
+
+// Sections (typically component-specific)
+@use "sections/game";

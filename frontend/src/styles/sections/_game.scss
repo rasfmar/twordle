@@ -1,0 +1,57 @@
+@use "../abstracts/theme";
+@use "../abstracts/keyframes";
+
+$grid-grap: 5px;
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  gap: $grid-grap;
+
+  &__row {
+    display: flex;
+    justify-content: center;
+    gap: $grid-grap;
+  }
+
+  &__letter {
+    min-width: 20px;
+    min-height: 20px;
+    width: 5vw;
+    height: 5vw;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 2px solid theme.$white;
+    text-align: center;
+    font-size: max(15px, 2.5vw);
+    font-weight: 600;
+    color: theme.$white;
+
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.4s cubic-bezier(0, 1, 1, 1);
+
+    &--shaking {
+      animation: shake 0.5s ease-in-out both 1;
+    }
+
+    &--showing {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @for $i from 0 to 10 {
+      &:nth-child(#{$i + 1}) {
+        transition-delay: calc(0.02s * ($i + 1));
+      }
+    }
+
+    @each $key, $value in theme.$letter-mode {
+      &--#{$key} {
+        background-color: $value;
+      }
+    }
+  }
+}

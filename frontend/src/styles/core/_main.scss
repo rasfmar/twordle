@@ -1,0 +1,9 @@
+@use "../abstracts/theme";
+
+body {
+  margin: 0;
+  background-color: theme.$black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+  color: theme.$white;
+}

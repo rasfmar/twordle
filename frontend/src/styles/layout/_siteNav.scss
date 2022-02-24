@@ -1,0 +1,24 @@
+@use "../abstracts/theme";
+
+$site-nav-height: 50px;
+
+.site-nav {
+  width: 100vw;
+  height: $site-nav-height;
+  border-bottom: 1px solid rgba(theme.$white, 0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__brand {
+    padding: 0 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &__settings {
+    padding: 0 20px;
+    color: theme.$white;
+  }
+}
